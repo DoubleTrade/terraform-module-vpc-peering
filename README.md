@@ -9,7 +9,7 @@ with the official VPC module from the terraform registry (https://registry.terra
 
 This route is created by terraform when you configure your VPC with a `public_subnets` cidr blocks like this:
 
-```
+```hcl
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "1.34.0"
