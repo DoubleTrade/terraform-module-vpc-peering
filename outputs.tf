@@ -1,3 +1,8 @@
+output "peering_id" {
+  value       = "${aws_vpc_peering_connection.with_accepter.id}"
+  description = "The peering connection id"
+}
+
 output "accepter_vpc_id" {
   value       = "${data.aws_vpc.accepter.id}"
   description = "Accepter VPC id"
