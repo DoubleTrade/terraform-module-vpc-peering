@@ -59,6 +59,9 @@ module "peering_ab" {
   requester_vpc_name    = "my-vpc-b"
   requester_route_table = "my-custom-route-table"
 
+# Disable remote VPC DNS resolution
+  accepter_allow_dns_resolution = "no"
+
   tags = {
     Name        = "vpc-a-b"
     Shortname   = "vpc-a-b"
@@ -85,5 +88,6 @@ module "peering_ab" {
     Description = "Peering from VPC A to VPC B"
   }
 }
+```
 
 We suppose route tables name are unique in a same VPC.

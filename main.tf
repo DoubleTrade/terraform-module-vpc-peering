@@ -49,7 +49,8 @@ resource "aws_vpc_peering_connection" "with_accepter" {
   auto_accept = true
 
   accepter {
-    allow_remote_vpc_dns_resolution = true // We allow private DNS resolution between VPC's                                                                                                                                               
+    // Allow private DNS resolution between VPCs
+    allow_remote_vpc_dns_resolution = "${var.accepter_allow_dns_resolution == "yes" ? true : false }"
   }
 
   tags = "${var.tags}"

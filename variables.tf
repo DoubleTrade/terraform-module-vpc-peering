@@ -26,6 +26,12 @@ variable "requester_route_table" {
   description = "Route table name, will be used to route traffic from/to the peering pairs. If left emtpy, the module will target the requester's VPC public route (vpcname-public)"
 }
 
+variable "accepter_allow_dns_resolution" {
+  type        = "string"
+  default     = "yes"
+  description = "Enable allow_remote_vpc_dns_resolution, can be set to yes or no"
+}
+
 variable "tags" {
   type        = "map"
   default     = {}
